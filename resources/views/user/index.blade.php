@@ -39,56 +39,6 @@
 	
     <!-- Start header area -->
     <header class="header__section">
-        <div class="header__topbar bg__secondary">
-            <div class="container-fluid">
-                <div class="header__topbar--inner d-flex align-items-center justify-content-between">
-                    <div class="header__shipping">
-                        <ul class="header__shipping--wrapper d-flex">
-                            <li class="header__shipping--text text-white">Welcome to Netmark online Store</li>
-                            <li class="header__shipping--text text-white d-sm-2-none"><img class="header__shipping--text__icon" src="FrontendFiles/img/icon/bus.png" alt="bus-icon"> Track Your Order</li>
-                            <li class="header__shipping--text text-white d-sm-2-none"><img class="header__shipping--text__icon" src="FrontendFiles/img/icon/email.png" alt="email-icon"> <a class="header__shipping--text__link" href="mailto:demo@gmail.com">demo@gmail.com</a></li>
-                        </ul>
-                    </div>
-                    <div class="language__currency d-none d-lg-block">
-                        <ul class="d-flex align-items-center">
-                            <li class="language__currency--list">
-                                <a class="language__switcher text-white" href="#">
-                                    <img class="language__switcher--icon__img" src="FrontendFiles/img/icon/language-icon.png" alt="currency">
-                                    <span>English</span> 
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
-                                        <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
-                                    </svg>
-                                </a>
-                                <div class="dropdown__language">
-                                    <ul>
-                                        <li class="language__items"><a class="language__text" href="#">France</a></li>
-                                        <li class="language__items"><a class="language__text" href="#">Russia</a></li>
-                                        <li class="language__items"><a class="language__text" href="#">Spanish</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="language__currency--list">
-                                <a class="account__currency--link text-white" href="#">
-                                    <img src="FrontendFiles/img/icon/usd-icon.png" alt="currency">
-                                    <span>$ US Dollar</span> 
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
-                                        <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
-                                    </svg>
-                                </a>
-                                <div class="dropdown__currency">
-                                    <ul>
-                                        <li class="currency__items"><a class="currency__text" href="#">CAD</a></li>
-                                        <li class="currency__items"><a class="currency__text" href="#">CNY</a></li>
-                                        <li class="currency__items"><a class="currency__text" href="#">EUR</a></li>
-                                        <li class="currency__items"><a class="currency__text" href="#">GBP</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="main__header header__sticky">
             <div class="container-fluid">
                 <div class="main__header--inner position__relative d-flex justify-content-between align-items-center">
@@ -255,7 +205,6 @@
                             </ul>
                         </nav>
                     </div>
-                    <p class="header__discount--text"><img class="header__discount--icon__img" src="FrontendFiles/img/icon/lamp.png" alt="lamp-img"> Special up to 60% Off all item</p>
                 </div>
             </div>
         </div>
@@ -302,47 +251,6 @@
                                         <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="product-gallery.html">Product Gallery</a></li>
                                     </ul>
                                 </li>
-                                <li class="offcanvas__sub_menu_li">
-                                    <a href="#" class="offcanvas__sub_menu_item">Column Three</a>
-                                    <ul class="offcanvas__sub_menu">
-                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="my-account.html">My Account</a></li>
-                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="my-account-2.html">My Account 2</a></li>
-                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="404.html">404 Page</a></li>
-                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="login.html">Login Page</a></li>
-                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="faq.html">Faq Page</a></li>
-                                    </ul>
-                                </li>
-                                <li class="offcanvas__sub_menu_li">
-                                    <a href="#" class="offcanvas__sub_menu_item">Column Three</a>
-                                    <ul class="offcanvas__sub_menu">
-                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="compare.html">Compare Pages</a></li>
-                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="checkout.html">Checkout page</a></li>
-                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="checkout-2.html">Checkout Style 2</a></li>
-                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="checkout-3.html">Checkout Style 3</a></li>
-                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="checkout-4.html">Checkout Style 4</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="offcanvas__menu_li">
-                            <a class="offcanvas__menu_item" href="#">Blog</a>
-                            <ul class="offcanvas__sub_menu">
-                                <li class="offcanvas__sub_menu_li"><a href="blog.html" class="offcanvas__sub_menu_item">Blog Grid</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="blog-details.html" class="offcanvas__sub_menu_item">Blog Details</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="blog-left-sidebar.html" class="offcanvas__sub_menu_item">Blog Left Sidebar</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="blog-right-sidebar.html" class="offcanvas__sub_menu_item">Blog Right Sidebar</a></li>
-                            </ul>
-                        </li>
-                        <li class="offcanvas__menu_li">
-                            <a class="offcanvas__menu_item" href="#">Pages</a>
-                            <ul class="offcanvas__sub_menu">
-                                <li class="offcanvas__sub_menu_li"><a href="about.html" class="offcanvas__sub_menu_item">About Us</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="contact.html" class="offcanvas__sub_menu_item">Contact Us</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="cart.html" class="offcanvas__sub_menu_item">Cart Page</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="portfolio.html" class="offcanvas__sub_menu_item">Portfolio Page</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="wishlist.html" class="offcanvas__sub_menu_item">Wishlist Page</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="login.html" class="offcanvas__sub_menu_item">Login Page</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="404.html" class="offcanvas__sub_menu_item">Error Page</a></li>
                             </ul>
                         </li>
                         <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="about.html">About</a></li>
@@ -355,43 +263,6 @@
                             </span>
                         <span class="offcanvas__account--items__label">Login / Register</span>
                         </a>
-                    </div>
-                    <div class="language__currency">
-                        <ul class="d-flex align-items-center">
-                            <li class="language__currency--list">
-                                <a class="offcanvas__language--switcher" href="#">
-                                    <img class="language__switcher--icon__img" src="FrontendFiles/img/icon/language-icon.png" alt="currency">
-                                    <span>English</span> 
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
-                                        <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
-                                    </svg>
-                                </a>
-                                <div class="offcanvas__dropdown--language">
-                                    <ul>
-                                        <li class="language__items"><a class="language__text" href="#">France</a></li>
-                                        <li class="language__items"><a class="language__text" href="#">Russia</a></li>
-                                        <li class="language__items"><a class="language__text" href="#">Spanish</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="language__currency--list">
-                                <a class="offcanvas__account--currency__menu" href="#">
-                                    <img src="FrontendFiles/img/icon/usd-icon.png" alt="currency">
-                                    <span>$ US Dollar</span> 
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
-                                        <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
-                                    </svg>
-                                </a>
-                                <div class="offcanvas__account--currency__submenu">
-                                    <ul>
-                                        <li class="currency__items"><a class="currency__text" href="#">CAD</a></li>
-                                        <li class="currency__items"><a class="currency__text" href="#">CNY</a></li>
-                                        <li class="currency__items"><a class="currency__text" href="#">EUR</a></li>
-                                        <li class="currency__items"><a class="currency__text" href="#">GBP</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                 </nav>
             </div>
