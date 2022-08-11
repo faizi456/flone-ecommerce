@@ -39,7 +39,7 @@
                      
                     </div>
                     <div class="table-responsive">
-                      <table class="table table-striped table-bordered display">
+                      <table id="example" class="table table-striped table-bordered display">
                             <thead>
                                 <tr>
                                     <th>Action</th>
@@ -80,8 +80,8 @@
                     <label for="main_cat">Main Category</label>
                     <select name="main_cat" id="main_cat" required class="form-control">
                         <option value="">SELECT</option>
-                        @foreach($subCategories as $subcat)
-                        <option value="{{$subcat->cat->id}}">{{$subcat->cat->name}}</option>
+                        @foreach($categories as $cat)
+                        <option value="{{$cat->id}}">{{$cat->name}}</option>
                         @endforeach
                     </select>
                 </div>

@@ -20,6 +20,17 @@
     border-radius: 4px !important;
     border: none !important;
 }
+#value-form{
+    color:white !important;
+    background-color: #ee2761 !important;
+    border-radius: 4px !important;
+    font-weight: bolder !important;
+    box-shadow: 0px 3px 7px 0px rgba(107, 107, 107, 0.555) !important;
+}
+#value-form:hover{
+    border-radius: 4px !important;
+    border: none !important;
+}
 #btn-update{
     background-color:rgba(0, 0, 0, 0.664) !important;
     color:white !important;

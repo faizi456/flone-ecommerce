@@ -71,22 +71,22 @@
                                     <div class="col-lg-6 col-md-12 mt-3">
                                         <input type="text" hidden name="product_type" value="Single Product">
                                         <label for="">Product Name</label>
-                                        <input type="text" name="product_name" class="form-control" required>
+                                        <input type="text" name="product_name" class="form-control" >
                                     </div>
                                     <div class="col-lg-6 col-md-12 mt-3">
                                         <label for="">Product Code</label>
-                                        <input type="text" name="product_code" class="form-control" required>
+                                        <input type="text" name="product_code" class="form-control" >
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12 mt-3">
-                                        <textarea name="description" rows="4" class="form-control" required placeholder="Enter Description"></textarea>
+                                        <textarea name="description" rows="4" class="form-control"  placeholder="Enter Description"></textarea>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-4 col-md-12 mt-3">
                                         <label for="">Main Category</label>
-                                        <select name="mainCategory" class="form-control" required>
+                                        <select name="mainCategory" class="form-control" >
                                             <option value="">SELECT</option>
                                             @foreach($categories as $cat)
                                             <option value="{{$cat->id}}">{{$cat->name}}</option>
@@ -95,7 +95,7 @@
                                     </div>
                                     <div class="col-lg-4 col-md-12 mt-3">
                                         <label for="">Sub Category</label>
-                                        <select name="subCategory" class="form-control" required>
+                                        <select name="subCategory" class="form-control" >
                                             <option value="">SELECT</option>
                                             @foreach($subcategories as $sub)
                                             <option value="{{$sub->sub_id}}">{{$sub->subcat_name}}</option>
@@ -104,7 +104,7 @@
                                     </div>
                                     <div class="col-lg-4 col-md-12 mt-3">
                                         <label for="">Supplier</label>
-                                        <select name="supplier" class="form-control" required>
+                                        <select name="supplier" class="form-control" >
                                             <option value="">SELECT</option>
                                             @foreach($suppliers as $sup)
                                             <option value="{{$sup->id}}">{{$sup->name}}</option>
@@ -115,25 +115,25 @@
                                 <div class="row">
                                     <div class="col-lg-4 col-md-12 mt-3">
                                         <label for="">Unit Price</label>
-                                        <input type="text" name="unitPrice" class="form-control" required>
+                                        <input type="text" name="unitPrice" class="form-control" >
                                     </div>
                                     <div class="col-lg-4 col-md-12 mt-3">
                                         <label for="">SRP</label>
-                                        <input type="text" name="srp" class="form-control" required>
+                                        <input type="text" name="srp" class="form-control" >
                                     </div>
                                     <div class="col-lg-4 col-md-12 mt-3">
                                         <label for="">Qunatity Type</label>
-                                        <input type="text" name="quantityType" required class="form-control">
+                                        <input type="text" name="quantityType"  class="form-control">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-12 mt-3">
                                         <label for="">Stock</label>
-                                        <input type="text" name="stock" class="form-control" required>
+                                        <input type="text" name="stock" class="form-control" >
                                     </div>
                                     <div class="col-lg-6 col-md-12 mt-3">
                                         <label for="">Images</label>
-                                        <input type="file" name="images[]" class="form-control" multiple required>
+                                        <input type="file" name="images[]" class="form-control" multiple >
                                     </div>
                                 </div>
                                 <div class="row">
@@ -173,22 +173,22 @@
                                     <div class="col-lg-6 col-md-12 mt-3">
                                         <input type="text" hidden name="product_type" value="Variation Product">
                                         <label for="">Product Code</label>
-                                        <input type="text" name="product_code" class="form-control" required>
+                                        <input type="text" name="product_code" class="form-control" >
                                     </div>
                                     <div class="col-lg-6 col-md-12 mt-3">
                                         <label for="">Product Name</label>
-                                        <input type="text" name="product_name" class="form-control" required>
+                                        <input type="text" name="product_name" class="form-control" >
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12 mt-3">
-                                        <textarea name="description" rows="4" class="form-control" required></textarea>
+                                        <textarea name="description" rows="4" class="form-control" ></textarea>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-4 col-md-12 mt-3">
                                         <label for="">Main Category</label>
-                                        <select name="mainCategory" class="form-control" required>
+                                        <select name="mainCategory" class="form-control" >
                                             <option value="">SELECT</option>
                                             @foreach($categories as $cat)
                                             <option value="{{$cat->id}}">{{$cat->name}}</option>
@@ -197,7 +197,7 @@
                                     </div>
                                     <div class="col-lg-4 col-md-12 mt-3">
                                         <label for="">Sub Category</label>
-                                        <select name="subCategory" class="form-control" required>
+                                        <select name="subCategory" class="form-control" >
                                             <option value="">SELECT</option>
                                             @foreach($subcategories as $sub)
                                             <option value="{{$sub->sub_id}}">{{$sub->subcat_name}}</option>
@@ -206,7 +206,7 @@
                                     </div>
                                     <div class="col-lg-4 col-md-12 mt-3">
                                         <label for="">Supplier</label>
-                                        <select name="supplier" class="form-control" required>
+                                        <select name="supplier" class="form-control" >
                                             <option value="">SELECT</option>
                                             @foreach($suppliers as $sup)
                                             <option value="{{$sup->id}}">{{$sup->name}}</option>
@@ -244,31 +244,31 @@
                                         <div class="row">
                                             <div class="col-md-2 mt-3">
                                                 <label for="">Stock</label>
-                                                <input type="text" name="stock[]" id="stock" class="form-control" required>
+                                                <input type="text" name="stock[]" id="stock" class="form-control" >
                                             </div>
                                             <div class="col-md-2 mt-3">
                                                 <label for="">SRP</label>
-                                                <input type="text" name="srp[]" id="srp" class="form-control" required>
+                                                <input type="text" name="srp[]" id="srp" class="form-control" >
                                             </div>
                                             <div class="col-md-2 mt-3">
                                                 <label for="">Unit Price</label>
-                                                <input type="text" name="unitPrice[]" id="unitPrice" class="form-control" required>
+                                                <input type="text" name="unitPrice[]" id="unitPrice" class="form-control" >
                                             </div>
                                             <div class="col-md-3 mt-3">
                                                 <label for="">Size</label>
-                                                <input type="text" name="size[]" id="size" class="form-control" required>
+                                                <input type="text" name="size[]" id="size" class="form-control" >
                                             </div>
                                             <div class="col-md-3 mt-3">
                                                 <label for="">Color</label>
-                                                <input type="text" name="color[]" id="color" class="form-control" required>
+                                                <input type="text" name="color[]" id="color" class="form-control" >
                                             </div>
                                             <div class="col-md-3 mt-3">
                                                 <label for="">Quantity Type</label>
-                                                <input type="text" name="quantityType[]" id="quantityType" class="form-control" required>
+                                                <input type="text" name="quantityType[]" id="quantityType" class="form-control" >
                                             </div>
                                             <div class="col-md-3 mt-3">
                                                 <label for="">Images</label>
-                                                <input type="file" name="attr_images[]" id="attr_images" class="form-control" multiple required onchange="preview_images();">
+                                                <input type="file" name="attr_images[]" id="attr_images" class="form-control" multiple  onchange="preview_images();">
                                             </div>
                                             <div class="col-md-3 mt-3">
                                                 <button type="button" onclick="add_more();" class="btn rounded-pill px-4 btn-light-success text-success font-medium waves-effect waves-light">
@@ -309,19 +309,19 @@
         count++;
         var html = ' <div class="form-group" id="product_attr_' + count + '"><div class="row">';
 
-        html += '<div class="col-md-2 mt-3"><input type="text" name="stock[]" id="stock" class="form-control" placeholder="Stock" required></div>';
+        html += '<div class="col-md-2 mt-3"><input type="text" name="stock[]" id="stock" class="form-control" placeholder="Stock" ></div>';
 
-        html += '<div class="col-md-2 mt-3"><input type="text" name="srp[]" id="srp" class="form-control" placeholder="SRP" required></div>';
+        html += '<div class="col-md-2 mt-3"><input type="text" name="srp[]" id="srp" class="form-control" placeholder="SRP" ></div>';
 
-        html += '<div class="col-md-2 mt-3"><input type="text" name="unitPrice[]" id="unitPrice" class="form-control" placeholder="Unit Price" required></div>';
+        html += '<div class="col-md-2 mt-3"><input type="text" name="unitPrice[]" id="unitPrice" class="form-control" placeholder="Unit Price" ></div>';
 
-        html += '<div class="col-md-3 mt-3"><input type="text" name="size[]" id="size" class="form-control" placeholder="Size" required></div>';
+        html += '<div class="col-md-3 mt-3"><input type="text" name="size[]" id="size" class="form-control" placeholder="Size" ></div>';
 
-        html += '<div class="col-md-3 mt-3"><input type="text" name="color[]" id="color" class="form-control" placeholder="Color" required></div>';
+        html += '<div class="col-md-3 mt-3"><input type="text" name="color[]" id="color" class="form-control" placeholder="Color" ></div>';
 
-        html += '<div class="col-md-3 mt-3"><input type="text" name="quantityType[]" id="quantityType" placeholder="Quantity Type" class="form-control" required></div>';
+        html += '<div class="col-md-3 mt-3"><input type="text" name="quantityType[]" id="quantityType" placeholder="Quantity Type" class="form-control" ></div>';
 
-        html += '<div class="col-md-3 mt-3"><input type="file" name="attr_images[]" onchange="preview_images();" id="attr_images" class="form-control" multiple required></div>';
+        html += '<div class="col-md-3 mt-3"><input type="file" name="attr_images[]" onchange="preview_images();" id="attr_images" class="form-control" multiple ></div>';
 
         html += '<div class="col-md-3 mt-3"><button type="button" onclick="remove_more(' + count + ');" class="btn rounded-pill px-4 btn-light-danger text-danger font-medium waves-effect waves-light"><i class="fas fa-minus"></i></button></div>';
 
@@ -368,8 +368,8 @@
             var formData = new FormData(form);
             $("#form-submit").prop("disabled", true);
             $.ajax({
-                type:"POST",
                 url:'/product',
+                type:"POST",
                 data:formData,
                 processData:false,
                 contentType:false,

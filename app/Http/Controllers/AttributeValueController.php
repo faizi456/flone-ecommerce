@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Attribute;
 use App\Models\AttributeValue;
 use Illuminate\Http\Request;
 
-class AttributeController extends Controller
+class AttributeValueController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,6 @@ class AttributeController extends Controller
      */
     public function index()
     {
-        $attributes = Attribute::all();
-        $attributeValues = AttributeValue::with('attr:name,id')->get();
-        return view("admin.attributes.index",['attributes'=>$attributes, 'attributeValues'=>$attributeValues]);
     }
 
     /**
@@ -38,19 +34,20 @@ class AttributeController extends Controller
      */
     public function store(Request $request)
     {
-        $attribute = new Attribute;
-        $attribute->name = $request->input("name");
-        $attribute->save();
+        $attributeValue = new AttributeValue;
+        $attributeValue->attr_id = $request->input("val_id");
+        $attributeValue->value = $request->input("val_name");
+        $attributeValue->save();
         return response()->json(['res'=>'success']);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Attribute  $attribute
+     * @param  \App\Models\AttributeValue  $attributeValue
      * @return \Illuminate\Http\Response
      */
-    public function show(Attribute $attribute)
+    public function show(AttributeValue $attributeValue)
     {
         //
     }
@@ -58,10 +55,10 @@ class AttributeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Attribute  $attribute
+     * @param  \App\Models\AttributeValue  $attributeValue
      * @return \Illuminate\Http\Response
      */
-    public function edit(Attribute $attribute)
+    public function edit(AttributeValue $attributeValue)
     {
         //
     }
@@ -70,10 +67,10 @@ class AttributeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Attribute  $attribute
+     * @param  \App\Models\AttributeValue  $attributeValue
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Attribute $attribute)
+    public function update(Request $request, AttributeValue $attributeValue)
     {
         //
     }
@@ -81,13 +78,13 @@ class AttributeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Attribute  $attribute
+     * @param  \App\Models\AttributeValue  $attributeValue
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request)
     {
-        $attribute = Attribute::find($request->input("id"));
-        $attribute->delete();
+        $attributeValue = AttributeValue::find($request->input("id"));
+        $attributeValue->delete();
         return response()->json(['res'=>'success']);
     }
 }

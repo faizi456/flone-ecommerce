@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Subcategory;
+use App\Models\Product;
+
+
 
 class FrontendController extends Controller
 {
@@ -15,17 +19,31 @@ class FrontendController extends Controller
     // Shop Page
     public function shop(){
         $categories = Category::all();
-        return view("user.shop",['categories'=>$categories]);
+        $subcategories = Subcategory::all();
+        $products = Product::all();
+        return view("user.shop",['categories'=>$categories, 'subcategories'=>$subcategories, 'products'=>$products]);
     }
     // About US Page
     public function aboutUs(){
-        $categories = Category::all();
-        return view("user.aboutUs",['categories'=>$categories]);
+        return view("user.about_us");
     }
     // Contact Us Page
     public function contactUs(){
+        return view("user.contact_us");
+    }
+    // Contact Us Page
+    public function viewCategory($id){
+        $category = Category::where('id',$id)->first();
+        $subcategories = Subcategory::where('main_cat',$id)->get();
+        $products = Product::where('mainCategory',$id)->get();
+        return view("user.view-category",['category'=>$category, 'subCategories'=>$subcategories, 'products'=>$products]);
+    }
+    public function viewSubCategory($id){
         $categories = Category::all();
-        return view("user.contactUs",['categories'=>$categories]);
+        $subcategory = Subcategory::where('sub_id',$id)->first();
+        $products = Product::where('subCategory',$id)->get();
+        return view("user.view_subcategory",['categories'=>$categories, 'subcategory'=>$subcategory, 'products'=>$products]);
     }
 
+    
 }

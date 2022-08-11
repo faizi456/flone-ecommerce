@@ -44,4 +44,5 @@ class sitecontroller extends Controller
         Auth::logout();
         return redirect('/login');
     }
+
 }

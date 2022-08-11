@@ -85,7 +85,7 @@
                   ><span class="hide-menu">Supplier </span></a
                 >
               </li>
-              {{-- <li class="sidebar-item">
+              <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark"
                   href="{{ route('attributes.index') }}"
@@ -93,7 +93,7 @@
                   ><i class="feather-sm" data-feather="package"></i>
                   <span class="hide-menu">Product Attributes</span></a
                 >
-              </li> --}}
+              </li>
               <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark"

@@ -1,292 +1,380 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="zxx">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dking - Multipurpose eCommerce HTML Template</title>
-    <meta name="robots" content="noindex, follow" />
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('FrontendFiles/images/favicon.png')}}">
+  <meta charset="utf-8">
+  <title>Suruchi</title>
+  <meta name="description" content="Morden Bootstrap HTML5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="{{asset('FrontendFiles/img/favicon.ico')}}">
+    
+   <!-- ======= All CSS Plugins here ======== -->
+  <link rel="stylesheet" href="{{asset('FrontendFiles/css/plugins/swiper-bundle.min.css')}}">
+  <link rel="stylesheet" href="{{asset('FrontendFiles/css/plugins/glightbox.min.css')}}">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
 
-    <!-- All CSS is here
-	============================================ -->
+  <!-- Plugin css -->
+  <link rel="stylesheet" href="{{asset('FrontendFiles/css/vendor/bootstrap.min.css')}}">
 
-    <!-- <link rel="stylesheet" href="FrontendFiles/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="FrontendFiles/css/vendor/vandella.css">
-    <link rel="stylesheet" href="FrontendFiles/css/vendor/jellybelly.css">
-    <link rel="stylesheet" href="FrontendFiles/css/vendor/icofont.min.css">
-    <link rel="stylesheet" href="FrontendFiles/css/vendor/fontello.css">
-    <link rel="stylesheet" href="FrontendFiles/css/plugins/easyzoom.css">
-    <link rel="stylesheet" href="FrontendFiles/css/plugins/slick.css">
-    <link rel="stylesheet" href="FrontendFiles/css/plugins/nice-select.css">
-    <link rel="stylesheet" href="FrontendFiles/css/plugins/animate.css">
-    <link rel="stylesheet" href="FrontendFiles/css/plugins/magnific-popup.css">
-    <link rel="stylesheet" href="FrontendFiles/css/plugins/jquery-ui.css">
-    <link rel="stylesheet" href="FrontendFiles/css/style.css"> -->
+  <!-- Custom Style CSS -->
+  <link rel="stylesheet" href="{{asset('FrontendFiles/css/style.css')}}">
 
-    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
-    <link rel="stylesheet" href="{{asset('FrontendFiles/css/vendor/vendor.min.css')}}">
-    <link rel="stylesheet" href="{{asset('FrontendFiles/css/plugins/plugins.min.css')}}">
-    <link rel="stylesheet" href="{{asset('FrontendFiles/css/style.min.css')}}">
 </head>
-
 <body>
-    <div class="main-wrapper main-wrapper-3">
-        <header class="header-area section-padding-1 transparent-bar">
-            <div class="header-large-device">
-                <div class="header-bottom sticky-bar">
-                    <div class="container-fluid">
-                        <div class="header-bottom-flex">
-                            <div class="logo-menu-wrap">
-                                <div class="logo">
-                                    <a href="{{url('/')}}">
-                                        <img src="{{asset('FrontendFiles/images/logo/logo-9.png')}}" alt="logo">
-                                    </a>
-                                </div>
-                                <div class="main-menu menu-lh-1 main-menu-padding-1 menu-mrg-1">
-                                    <nav>
-                                        <ul>
-                                            <li><a href="{{url('/')}}">Home</a></li>
-                                            <li><a href="{{url('/shop')}}">Shop</a>
-                                                <ul class="sub-menu-width">
-                                                    @foreach($categories as $value)
-                                                        <li><a href="{{ url('maincategory/'.$value->id) }}">{{ $value->name }}</a></li>
-                                                    @endforeach
-                                                </ul>
-                                            </li>
-                                            <li><a href="{{url('/blog')}}">Blog</a></li>
-                                            <li><a href="{{url('/aboutUs')}}">About Us</a></li>
-                                            <li><a href="{{url('/contactUs')}}">Contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="header-action-wrap header-action-flex header-action-width header-action-mrg-1">
-                                <div class="search-style-1">
-                                    <form>
-                                        <div class="form-search-1">
-                                            <input class="input-text" value="" placeholder="Type to search" type="search">
-                                            <button>
-                                                <i class="icofont-search-1"></i>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="same-style">
-                                    <a href="login-register.html"><i class="icofont-user-alt-3"></i></a>
-                                </div>
-                                <div class="same-style header-cart">
-                                    <a class="cart-active" href="#"><i class="icofont-shopping-cart"></i></a>
-                                </div>
-                            </div>
-                        </div>
+
+    @php
+        $categories = getCategories();
+        $mac = getCartCount();
+    @endphp
+
+	
+    <!-- Start header area -->
+    <header class="header__section">
+        <div class="main__header header__sticky">
+            <div class="container-fluid">
+                <div class="main__header--inner position__relative d-flex justify-content-between align-items-center" >
+                    <div class="offcanvas__header--menu__open ">
+                        <a class="offcanvas__header--menu__open--btn" href="javascript:void(0)" data-offcanvas>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon offcanvas__header--menu__open--svg" viewBox="0 0 512 512"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M80 160h352M80 256h352M80 352h352"/></svg>
+                            <span class="visually-hidden">Menu Open</span>
+                        </a>
                     </div>
-                </div>
-            </div>
-            <div class="header-small-device header-small-ptb sticky-bar">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-6">
-                            <div class="mobile-logo mobile-logo-width">
-                                <a href="index.html">
-                                    <img alt="" src="{{asset('FrontendFiles/images/logo/logo-9.png')}}">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="header-action-wrap header-action-flex header-action-mrg-1">
-                                <div class="same-style header-cart">
-                                    <a class="cart-active" href="#"><i class="icofont-shopping-cart"></i></a>
-                                </div>
-                                <div class="same-style header-info">
-                                    <button class="mobile-menu-button-active">
-                                        <span class="info-width-1"></span>
-                                        <span class="info-width-2"></span>
-                                        <span class="info-width-3"></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="main__logo">
+                        <h1 class="main__logo--title"><a class="main__logo--link" href="{{url('/')}}"><img class="main__logo--img" src="{{asset('FrontendFiles/img/logo/nav-log.png')}}" alt="logo-img"></a></h1>
                     </div>
-                </div>
-            </div>
-        </header>
-        <!-- mini cart start -->
-        <div class="sidebar-cart-active">
-            <div class="sidebar-cart-all">
-                <a class="cart-close" href="#"><i class="icofont-close-line"></i></a>
-                <div class="cart-content">
-                    <h3>Shopping Cart</h3>
-                    <ul>
-                        <li class="single-product-cart">
-                            <div class="cart-img">
-                                <a href="#"><img src="{{asset('FrontendFiles/images/cart/cart-1.jpg')}}" alt=""></a>
+                    <div class="header__search--widget header__sticky--none d-none d-lg-block">
+                        <form class="d-flex header__search--form" action="#">
+                            <div class="header__select--categories select">
+                                <select class="header__select--inner">
+                                    <option selected value="1">All Categories</option>
+                                    @foreach($categories as $value)
+                                        <option value="{{$value->id}}">{{$value->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <div class="cart-title">
-                                <h4><a href="#">Awesome Mobile</a></h4>
-                                <span> 1 × $49.00 </span>
+                            <div class="header__search--box">
+                                <label>
+                                    <input class="header__search--input" placeholder="Keyword here..." type="text">
+                                </label>
+                                <button class="header__search--button bg__secondary text-white" type="submit" aria-label="search button">
+                                    <svg class="header__search--button__svg" xmlns="http://www.w3.org/2000/svg" width="27.51" height="26.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
+                                </button>
                             </div>
-                            <div class="cart-delete">
-                                <a href="#">×</a>
-                            </div>
-                        </li>
-                        <li class="single-product-cart">
-                            <div class="cart-img">
-                                <a href="#"><img src="{{asset('FrontendFiles/images/cart/cart-2.jpg')}}" alt=""></a>
-                            </div>
-                            <div class="cart-title">
-                                <h4><a href="#">Smart Watch</a></h4>
-                                <span> 1 × $49.00 </span>
-                            </div>
-                            <div class="cart-delete">
-                                <a href="#">×</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="cart-total">
-                        <h4>Subtotal: <span>$170.00</span></h4>
-                    </div>
-                    <div class="cart-checkout-btn">
-                        <a class="btn-hover cart-btn-style" href="cart.html">view cart</a>
-                        <a class="no-mrg btn-hover cart-btn-style" href="checkout.html">checkout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile menu start -->
-        <div class="mobile-menu-active clickalbe-sidebar-wrapper-style-1">
-            <div class="clickalbe-sidebar-wrap">
-                <a class="sidebar-close"><i class="icofont-close-line"></i></a>
-                <div class="mobile-menu-content-area sidebar-content-100-percent">
-                    <div class="mobile-search">
-                        <form class="search-form" action="#">
-                            <input type="text" placeholder="Search here…">
-                            <button class="button-search"><i class="icofont-search-1"></i></button>
                         </form>
                     </div>
-                    <div class="clickable-mainmenu-wrap clickable-mainmenu-style1">
-                        <nav>
-                            <ul>
-                                <li class="has-sub-menu"><a href="#">Home</a>
-                                    <ul class="sub-menu-2">
-                                        <li class="has-sub-menu"><a href="#">Demo Group #01</a>
-                                            <ul class="sub-menu-2">
-                                                <li><a href="index.html">Home Multipurpose</a></li>
-                                                <li><a href="index-megashop.html">Home Mega Shop</a></li>
-                                                <li><a href="index-fashion.html">Home Fashion</a></li>
-                                                <li><a href="index-fashion-2.html">Home Fashion 2 </a></li>
-                                                <li><a href="index-automobile.html">Home Automobile</a></li>
-                                                <li><a href="index-furniture.html">Home Furniture</a></li>
-                                                <li><a href="index-electric.html">Home Electric</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-sub-menu"><a href="#">Demo Group #02</a>
-                                            <ul class="sub-menu-2">
-                                                <li><a href="index-electric-2.html">Home Electric 2</a></li>
-                                                <li><a href="index-handcraft.html">Home Hand Craft</a></li>
-                                                <li><a href="index-book.html">Home Book</a></li>
-                                                <li><a href="index-book-2.html">Home Book 2</a></li>
-                                                <li><a href="index-cake.html">Home cake</a></li>
-                                                <li><a href="index-organic.html">Home Organic</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-sub-menu"><a href="#">Demo Group #03</a>
-                                            <ul class="sub-menu-2">
-                                                <li><a href="index-flower.html">Home Flower</a></li>
-                                                <li><a href="index-treeplant.html">Home Tree plant</a></li>
-                                                <li><a href="index-pet-food.html">Home Pet Food</a></li>
-                                                <li><a href="index-kids.html">Home Kids</a></li>
-                                                <li><a href="index-kids-2.html">Home Kids 2</a></li>
-                                                <li><a href="index-kids-3.html">Home Kids 3</a></li>
-                                            </ul>
-                                        </li>
+                    <div class="header__account header__sticky--none">
+                        <ul class="d-flex">
+                            <li class="header__account--items">
+                                <a class="header__account--btn" href="my-account.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26.51" height="23.443" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg> 
+                                    <span class="header__account--btn__text"></span>
+                                </a>
+                            </li>
+                            <li class="header__account--items d-none d-lg-block">
+                                <a class="header__account--btn" href="wishlist.html">
+                                    <svg  xmlns="http://www.w3.org/2000/svg" width="28.51" height="23.443" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path></svg>
+                                    <span class="header__account--btn__text"> </span>
+                                    <span class="items__count wishlist" style="left: 17px;">02</span> 
+                                </a>
+                            </li>
+                            <li class="header__account--items">
+                                <a class="header__account--btn minicart__open--btn" href="javascript:void(0)" data-offcanvas>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26.51" height="23.443" viewBox="0 0 14.706 13.534">
+                                        <g  transform="translate(0 0)">
+                                          <g >
+                                            <path  data-name="Path 16787" d="M4.738,472.271h7.814a.434.434,0,0,0,.414-.328l1.723-6.316a.466.466,0,0,0-.071-.4.424.424,0,0,0-.344-.179H3.745L3.437,463.6a.435.435,0,0,0-.421-.353H.431a.451.451,0,0,0,0,.9h2.24c.054.257,1.474,6.946,1.555,7.33a1.36,1.36,0,0,0-.779,1.242,1.326,1.326,0,0,0,1.293,1.354h7.812a.452.452,0,0,0,0-.9H4.74a.451.451,0,0,1,0-.9Zm8.966-6.317-1.477,5.414H5.085l-1.149-5.414Z" transform="translate(0 -463.248)" fill="currentColor"/>
+                                            <path  data-name="Path 16788" d="M5.5,478.8a1.294,1.294,0,1,0,1.293-1.353A1.325,1.325,0,0,0,5.5,478.8Zm1.293-.451a.452.452,0,1,1-.431.451A.442.442,0,0,1,6.793,478.352Z" transform="translate(-1.191 -466.622)" fill="currentColor"/>
+                                            <path  data-name="Path 16789" d="M13.273,478.8a1.294,1.294,0,1,0,1.293-1.353A1.325,1.325,0,0,0,13.273,478.8Zm1.293-.451a.452.452,0,1,1-.431.451A.442.442,0,0,1,14.566,478.352Z" transform="translate(-2.875 -466.622)" fill="currentColor"/>
+                                          </g>
+                                        </g>
+                                    </svg>
+                                    <span class="header__account--btn__text"></span>   
+                                    <span class="items__count">{{$mac}}</span> 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header__menu d-none header__sticky--block d-lg-block">
+                        <nav class="header__menu--navigation">
+                            <ul class="d-flex">
+                                <li class="header__menu--items style2">
+                                    <a class="header__menu--link" href="{{url('/')}}">Home</a>
+                                </li>
+                                <li class="header__menu--items style2">
+                                    <a class="header__menu--link" href="{{route('shop')}}">Shop</a>
+                                    <ul class="header__sub--menu">
+                                        @foreach($categories as $value)
+                                            <li class="header__sub--menu__items"><a href="{{route('viewCategory',$value->id)}}" class="header__sub--menu__link">{{$value->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
-                                <li class="has-sub-menu"><a href="#">shop</a>
-                                    <ul class="sub-menu-2">
-                                        <li class="has-sub-menu"><a href="#">Shop Layout</a>
-                                            <ul class="sub-menu-2">
-                                                <li><a href="shop.html">Shop Grid Style 1</a></li>
-                                                <li><a href="shop-2.html">Shop Grid Style 2</a></li>
-                                                <li><a href="shop-3.html">Shop Grid Style 3</a></li>
-                                                <li><a href="shop-4.html">Shop Grid Style 4</a></li>
-                                                <li><a href="shop-5.html">Shop Grid Style 5</a></li>
-                                                <li><a href="shop-6.html">Shop Grid Style 6</a></li>
-                                                <li><a href="shop-list.html">Shop List Style 1</a></li>
-                                                <li><a href="shop-list-no-sidebar.html">Shop List Style 2</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-sub-menu"><a href="#">Product Layout</a>
-                                            <ul class="sub-menu-2">
-                                                <li><a href="product-details.html">Product Layout 1</a></li>
-                                                <li><a href="product-details-2.html">Product Layout 2</a></li>
-                                                <li><a href="product-details-3.html">Product Layout 3</a></li>
-                                                <li><a href="product-details-4.html">Product Layout 4</a></li>
-                                                <li><a href="product-details-5.html">Product Layout 5</a></li>
-                                                <li><a href="product-details-6.html">Product Layout 6</a></li>
-                                                <li><a href="product-details-7.html">Product Layout 7</a></li>
-                                                <li><a href="product-details-8.html">Product Layout 8</a></li>
-                                                <li><a href="product-details-9.html">Product Layout 9</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-sub-menu"><a href="#">Shop Page</a>
-                                            <ul class="sub-menu-2">
-                                                <li><a href="my-account.html">My Account</a></li>
-                                                <li><a href="checkout.html">Check Out</a></li>
-                                                <li><a href="cart.html">Shopping Cart</a></li>
-                                                <li><a href="wishlist.html">Wishlist</a></li>
-                                                <li><a href="order-tracking.html">Order Tracking</a></li>
-                                                <li><a href="compare.html">Compare</a></li>
-                                                <li><a href="store.html">Store</a></li>
-                                                <li><a href="empty-cart.html">Empty Cart</a></li>
-                                                <li><a href="login-register.html">login / register</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li class="header__menu--items style2 d-none d-xl-block">
+                                    <a class="header__menu--link" href="">Blog</a>  
                                 </li>
-                                <li class="has-sub-menu"><a href="#">Pages</a>
-                                    <ul class="sub-menu-2">
-                                        <li><a href="about-us.html">About Us</a></li>
-                                        <li><a href="contact-us.html">Contact Us</a></li>
-                                        <li><a href="contact-us-2.html">Contact Us 2</a></li>
-                                        <li><a href="404.html">404 Page</a></li>
-                                    </ul>
+                                <li class="header__menu--items style2 d-none d-xl-block">
+                                    <a class="header__menu--link" href="{{url('/aboutUs')}}">About US </a>  
                                 </li>
-                                <li><a href="shop.html">Collections</a></li>
-                                <li class="has-sub-menu"><a href="#">Blog</a>
-                                    <ul class="sub-menu-2">
-                                        <li><a href="blog.html">Blog Page</a></li>
-                                        <li><a href="blog-no-sidebar.html">Blog No sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                    </ul>
+                                <li class="header__menu--items style2">
+                                    <a class="header__menu--link " href="{{url('/contactUs')}}">Contact </a>  
                                 </li>
-                                <li><a href="contact-us.html">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
-                    <div class="mobile-curr-lang-wrap">
-                        <div class="single-mobile-curr-lang">
-                            <a class="mobile-language-active" href="#">Language <i class="icofont-simple-down"></i></a>
-                            <div class="lang-curr-dropdown lang-dropdown-active">
-                                <ul>
-                                    <li><a href="#">English</a></li>
-                                    <li><a href="#">Spanish</a></li>
-                                    <li><a href="#">Hindi </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="aside-contact-info">
-                        <ul>
-                            <li><i class="icofont-clock-time"></i>Monday - Friday: 9:00 - 19:00</li>
-                            <li><i class="icofont-envelope"></i>Info@example.com</li>
-                            <li><i class="icofont-stock-mobile"></i>(+55) 254. 254. 254</li>
-                            <li><i class="icofont-home"></i>Helios Tower 75 Tam Trinh Hoang - Ha Noi - Viet Nam</li>
+                    <div class="header__account header__account2 header__sticky--block">
+                        <ul class="d-flex">
+                            <li class="header__account--items header__account2--items  header__account--search__items d-none d-lg-block">
+                                <a class="header__account--btn search__open--btn" href="javascript:void(0)" data-offcanvas>
+                                    <svg class="header__search--button__svg" xmlns="http://www.w3.org/2000/svg" width="26.51" height="23.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>  
+                                    <span class="visually-hidden">Search</span>
+                                </a>
+                            </li>
+                            <li class="header__account--items header__account2--items">
+                                <a class="header__account--btn" href="my-account.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg"  width="26.51" height="23.443" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
+                                    <span class="visually-hidden">My Account</span>
+                                </a>
+                            </li>
+                            <li class="header__account--items header__account2--items d-none d-lg-block">
+                                <a class="header__account--btn" href="wishlist.html">
+                                    <svg  xmlns="http://www.w3.org/2000/svg" width="28.51" height="23.443" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path></svg>
+                                    <span class="items__count  wishlist style2">02</span> 
+                                </a>
+                            </li>
+                            <li class="header__account--items header__account2--items">
+                                <a class="header__account--btn minicart__open--btn" href="javascript:void(0)" data-offcanvas>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26.51" height="23.443" viewBox="0 0 14.706 13.534">
+                                        <g  transform="translate(0 0)">
+                                          <g >
+                                            <path  data-name="Path 16787" d="M4.738,472.271h7.814a.434.434,0,0,0,.414-.328l1.723-6.316a.466.466,0,0,0-.071-.4.424.424,0,0,0-.344-.179H3.745L3.437,463.6a.435.435,0,0,0-.421-.353H.431a.451.451,0,0,0,0,.9h2.24c.054.257,1.474,6.946,1.555,7.33a1.36,1.36,0,0,0-.779,1.242,1.326,1.326,0,0,0,1.293,1.354h7.812a.452.452,0,0,0,0-.9H4.74a.451.451,0,0,1,0-.9Zm8.966-6.317-1.477,5.414H5.085l-1.149-5.414Z" transform="translate(0 -463.248)" fill="currentColor"/>
+                                            <path  data-name="Path 16788" d="M5.5,478.8a1.294,1.294,0,1,0,1.293-1.353A1.325,1.325,0,0,0,5.5,478.8Zm1.293-.451a.452.452,0,1,1-.431.451A.442.442,0,0,1,6.793,478.352Z" transform="translate(-1.191 -466.622)" fill="currentColor"/>
+                                            <path  data-name="Path 16789" d="M13.273,478.8a1.294,1.294,0,1,0,1.293-1.353A1.325,1.325,0,0,0,13.273,478.8Zm1.293-.451a.452.452,0,1,1-.431.451A.442.442,0,0,1,14.566,478.352Z" transform="translate(-2.875 -466.622)" fill="currentColor"/>
+                                          </g>
+                                        </g>
+                                    </svg>
+                                    <span class="items__count style2">{{$mac}}</span> 
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="header__bottom">
+            <div class="container-fluid">
+                <div class="header__bottom--inner position__relative d-none d-lg-flex justify-content-between align-items-center">
+                    <div class="header__menu">
+                        <nav class="header__menu--navigation">
+                            <ul class="d-flex">
+                                <li class="header__menu--items">
+                                    <a class="header__menu--link" href="{{url('/')}}">Home</a>
+                                </li>
+                                <li class="header__menu--items">
+                                    <a class="header__menu--link" href="{{route('shop')}}">Shop</a>
+                                    <ul class="header__sub--menu">
+                                        @foreach($categories as $value)
+                                        <li class="header__sub--menu__items"><a href="{{route('viewCategory',$value->id)}}" class="header__sub--menu__link">{{$value->name}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                <li class="header__menu--items d-none d-xl-block">
+                                    <a class="header__menu--link" href="">Blog </a>  
+                                </li>
+                                <li class="header__menu--items d-none d-xl-block">
+                                    <a class="header__menu--link" href="{{url('/aboutUs')}}">About US </a>  
+                                </li>
+                                <li class="header__menu--items">
+                                    <a class="header__menu--link" href="{{url('/contactUs')}}">Contact </a>  
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Offcanvas header menu -->
+        <div class="offcanvas__header">
+            <div class="offcanvas__inner">
+                <div class="offcanvas__logo">
+                    <a class="offcanvas__logo_link" href="{{url('/')}}">
+                        <img src="FrontendFiles/img/logo/nav-log.png" alt="Grocee Logo" width="158" height="36">
+                    </a>
+                    <button class="offcanvas__close--btn" data-offcanvas>close</button>
+                </div>
+                <nav class="offcanvas__menu">
+                    <ul class="offcanvas__menu_ul">
+                        <li class="offcanvas__menu_li">
+                            <a class="offcanvas__menu_item" href="{{url('/')}}">Home</a>
+                        </li>
+                        <li class="offcanvas__menu_li">
+                            <a class="offcanvas__menu_item" href="{{route('shop')}}">Shop</a>
+                        </li>
+                        <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="">Blog</a></li>
+                        <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="{{url('/aboutUs')}}">About</a></li>
+                        <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="{{url('/contactUs')}}">Contact</a></li>
+                    </ul>
+                    <div class="offcanvas__account--items">
+                        <a class="offcanvas__account--items__btn d-flex align-items-center" href="">
+                        <span class="offcanvas__account--items__icon"> 
+                            <svg xmlns="http://www.w3.org/2000/svg"  width="20.51" height="19.443" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg> 
+                            </span>
+                        <span class="offcanvas__account--items__label">Login / Register</span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- End Offcanvas header menu -->
+
+        <!-- Start Offcanvas stikcy toolbar -->
+        <div class="offcanvas__stikcy--toolbar">
+            <ul class="d-flex justify-content-between">
+                <li class="offcanvas__stikcy--toolbar__list">
+                    <a class="offcanvas__stikcy--toolbar__btn" href="{{url('/')}}">
+                    <span class="offcanvas__stikcy--toolbar__icon"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="21.51" height="21.443" viewBox="0 0 22 17"><path fill="currentColor" d="M20.9141 7.93359c.1406.11719.2109.26953.2109.45703 0 .14063-.0469.25782-.1406.35157l-.3516.42187c-.1172.14063-.2578.21094-.4219.21094-.1406 0-.2578-.04688-.3515-.14062l-.9844-.77344V15c0 .3047-.1172.5625-.3516.7734-.2109.2344-.4687.3516-.7734.3516h-4.5c-.3047 0-.5742-.1172-.8086-.3516-.2109-.2109-.3164-.4687-.3164-.7734v-3.6562h-2.25V15c0 .3047-.11719.5625-.35156.7734-.21094.2344-.46875.3516-.77344.3516h-4.5c-.30469 0-.57422-.1172-.80859-.3516-.21094-.2109-.31641-.4687-.31641-.7734V8.46094l-.94922.77344c-.11719.09374-.24609.14062-.38672.14062-.16406 0-.30468-.07031-.42187-.21094l-.35157-.42187C.921875 8.625.875 8.50781.875 8.39062c0-.1875.070312-.33984.21094-.45703L9.73438.832031C10.1094.527344 10.5312.375 11 .375s.8906.152344 1.2656.457031l8.6485 7.101559zm-3.7266 6.50391V7.05469L11 1.99219l-6.1875 5.0625v7.38281h3.375v-3.6563c0-.3046.10547-.5624.31641-.7734.23437-.23436.5039-.35155.80859-.35155h3.375c.3047 0 .5625.11719.7734.35155.2344.211.3516.4688.3516.7734v3.6563h3.375z"></path></svg>
+                        </span>
+                    <span class="offcanvas__stikcy--toolbar__label">Home</span>
+                    </a>
+                </li>
+                <li class="offcanvas__stikcy--toolbar__list">
+                    <a class="offcanvas__stikcy--toolbar__btn" href="{{route('shop')}}">
+                    <span class="offcanvas__stikcy--toolbar__icon"> 
+                        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="18.51" height="17.443" viewBox="0 0 448 512"><path d="M416 32H32A32 32 0 0 0 0 64v384a32 32 0 0 0 32 32h384a32 32 0 0 0 32-32V64a32 32 0 0 0-32-32zm-16 48v152H248V80zm-200 0v152H48V80zM48 432V280h152v152zm200 0V280h152v152z"></path></svg>
+                        </span>
+                    <span class="offcanvas__stikcy--toolbar__label">Shop</span>
+                    </a>
+                </li>
+                <li class="offcanvas__stikcy--toolbar__list ">
+                    <a class="offcanvas__stikcy--toolbar__btn search__open--btn" href="javascript:void(0)" data-offcanvas>
+                        <span class="offcanvas__stikcy--toolbar__icon"> 
+                            <svg xmlns="http://www.w3.org/2000/svg"  width="22.51" height="20.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>   
+                        </span>
+                    <span class="offcanvas__stikcy--toolbar__label">Search</span>
+                    </a>
+                </li>
+                <li class="offcanvas__stikcy--toolbar__list">
+                    <a class="offcanvas__stikcy--toolbar__btn minicart__open--btn" href="javascript:void(0)" data-offcanvas>
+                        <span class="offcanvas__stikcy--toolbar__icon"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18.51" height="15.443" viewBox="0 0 18.51 15.443">
+                            <path  d="M79.963,138.379l-13.358,0-.56-1.927a.871.871,0,0,0-.6-.592l-1.961-.529a.91.91,0,0,0-.226-.03.864.864,0,0,0-.226,1.7l1.491.4,3.026,10.919a1.277,1.277,0,1,0,1.844,1.144.358.358,0,0,0,0-.049h6.163c0,.017,0,.034,0,.049a1.277,1.277,0,1,0,1.434-1.267c-1.531-.247-7.783-.55-7.783-.55l-.205-.8h7.8a.9.9,0,0,0,.863-.651l1.688-5.943h.62a.936.936,0,1,0,0-1.872Zm-9.934,6.474H68.568c-.04,0-.1.008-.125-.085-.034-.118-.082-.283-.082-.283l-1.146-4.037a.061.061,0,0,1,.011-.057.064.064,0,0,1,.053-.025h1.777a.064.064,0,0,1,.063.051l.969,4.34,0,.013a.058.058,0,0,1,0,.019A.063.063,0,0,1,70.03,144.853Zm3.731-4.41-.789,4.359a.066.066,0,0,1-.063.051h-1.1a.064.064,0,0,1-.063-.051l-.789-4.357a.064.064,0,0,1,.013-.055.07.07,0,0,1,.051-.025H73.7a.06.06,0,0,1,.051.025A.064.064,0,0,1,73.76,140.443Zm3.737,0L76.26,144.8a.068.068,0,0,1-.063.049H74.684a.063.063,0,0,1-.051-.025.064.064,0,0,1-.013-.055l.973-4.357a.066.066,0,0,1,.063-.051h1.777a.071.071,0,0,1,.053.025A.076.076,0,0,1,77.5,140.448Z" transform="translate(-62.393 -135.3)" fill="currentColor"/>
+                            </svg> 
+                        </span>
+                        <span class="offcanvas__stikcy--toolbar__label">Cart</span>
+                        <span class="items__count">{{$mac}}</span> 
+                    </a>
+                </li>
+                <li class="offcanvas__stikcy--toolbar__list">
+                    <a class="offcanvas__stikcy--toolbar__btn" href="wishlist.html">
+                        <span class="offcanvas__stikcy--toolbar__icon"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18.541" height="15.557" viewBox="0 0 18.541 15.557">
+                            <path  d="M71.775,135.51a5.153,5.153,0,0,1,1.267-1.524,4.986,4.986,0,0,1,6.584.358,4.728,4.728,0,0,1,1.174,4.914,10.458,10.458,0,0,1-2.132,3.808,22.591,22.591,0,0,1-5.4,4.558c-.445.282-.9.549-1.356.812a.306.306,0,0,1-.254.013,25.491,25.491,0,0,1-6.279-4.8,11.648,11.648,0,0,1-2.52-4.009,4.957,4.957,0,0,1,.028-3.787,4.629,4.629,0,0,1,3.744-2.863,4.782,4.782,0,0,1,5.086,2.447c.013.019.025.034.057.076Z" transform="translate(-62.498 -132.915)" fill="currentColor"/>
+                            </svg> 
+                        </span>
+                        <span class="offcanvas__stikcy--toolbar__label">Wishlist</span>
+                        <span class="items__count">3</span> 
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- End Offcanvas stikcy toolbar -->
+
+        <!-- Start offCanvas minicart -->
+        <div class="offCanvas__minicart">
+            <div class="minicart__header ">
+                <div class="minicart__header--top d-flex justify-content-between align-items-center">
+                    <h2 class="minicart__title h3"> Shopping Cart</h2>
+                    <button class="minicart__close--btn" aria-label="minicart close button" data-offcanvas> 
+                        <svg class="minicart__close--icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
+                    </button>
+                </div>
+                <p class="minicart__header--desc">Clothing and fashion products are limited</p>
+            </div>
+            <div class="minicart__product">
+                <div class="minicart__product--items d-flex">
+                    <div class="minicart__thumb">
+                        <a href="product-details.html"><img src="{{asset('FrontendFiles/img/product/product1.png')}}" alt="prduct-img"></a>
+                    </div>
+                    <div class="minicart__text">
+                        <h3 class="minicart__subtitle h4"><a href="product-details.html">Oversize Cotton Dress</a></h3>
+                        <span class="color__variant"><b>Color:</b> Beige</span>
+                        <div class="minicart__price">
+                            <span class="current__price">$125.00</span>
+                            <span class="old__price">$140.00</span>
+                        </div>
+                        <div class="minicart__text--footer d-flex align-items-center">
+                            <div class="quantity__box minicart__quantity">
+                                <button type="button"  class="quantity__value decrease" aria-label="quantity value" value="Decrease Value">-</button>
+                                <label>
+                                    <input type="number" class="quantity__number" value="1" data-counter />
+                                </label>
+                                <button type="button" class="quantity__value increase"  value="Increase Value">+</button>
+                            </div>
+                            <button class="minicart__product--remove">Remove</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="minicart__product--items d-flex">
+                    <div class="minicart__thumb">
+                        <a href="product-details.html"><img src="{{asset('FrontendFiles/img/product/product2.png')}}" alt="prduct-img"></a>
+                    </div>
+                    <div class="minicart__text">
+                        <h3 class="minicart__subtitle h4"><a href="product-details.html">Boxy Denim Jacket</a></h3>
+                        <span class="color__variant"><b>Color:</b> Green</span>
+                        <div class="minicart__price">
+                            <span class="current__price">$115.00</span>
+                            <span class="old__price">$130.00</span>
+                        </div>
+                        <div class="minicart__text--footer d-flex align-items-center">
+                            <div class="quantity__box minicart__quantity">
+                                <button type="button" class="quantity__value decrease" aria-label="quantity value" value="Decrease Value">-</button>
+                                <label>
+                                    <input type="number" class="quantity__number" value="1" data-counter />
+                                </label>
+                                <button type="button" class="quantity__value increase" aria-label="quantity value" value="Increase Value">+</button>
+                            </div>
+                            <button class="minicart__product--remove">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="minicart__amount">
+                <div class="minicart__amount_list d-flex justify-content-between">
+                    <span>Sub Total:</span>
+                    <span><b>$240.00</b></span>
+                </div>
+                <div class="minicart__amount_list d-flex justify-content-between">
+                    <span>Total:</span>
+                    <span><b>$240.00</b></span>
+                </div>
+            </div>
+            <div class="minicart__conditions text-center">
+                <input class="minicart__conditions--input" id="accept" type="checkbox">
+                <label class="minicart__conditions--label" for="accept">I agree with the <a class="minicart__conditions--link" href="privacy-policy.html">Privacy and Policy</a></label>
+            </div>
+            <div class="minicart__button d-flex justify-content-center">
+                <a class="primary__btn minicart__button--link" href="{{url('/cart')}}">View cart</a>
+                <a class="primary__btn minicart__button--link" href="checkout.html">Checkout</a>
+            </div>
+        </div>
+        <!-- End offCanvas minicart -->
+
+        <!-- Start serch box area -->
+        <div class="predictive__search--box ">
+            <div class="predictive__search--box__inner">
+                <h2 class="predictive__search--title">Search Products</h2>
+                <form class="predictive__search--form" action="#">
+                    <label>
+                        <input class="predictive__search--input" placeholder="Search Here" type="text">
+                    </label>
+                    <button class="predictive__search--button" aria-label="search button" type="submit"><svg class="header__search--button__svg" xmlns="http://www.w3.org/2000/svg" width="30.51" height="25.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>  </button>
+                </form>
+            </div>
+            <button class="predictive__search--close__btn" aria-label="search close button" data-offcanvas>
+                <svg class="predictive__search--close__icon" xmlns="http://www.w3.org/2000/svg" width="40.51" height="30.443"  viewBox="0 0 512 512"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
+            </button>
+        </div>
+        <!-- End serch box area -->
+
+    </header>
+    <!-- End header area -->
