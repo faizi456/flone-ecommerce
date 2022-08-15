@@ -32,6 +32,7 @@ Route::get('/contactUs',[FrontendController::class,'contactUs']);
 Route::get('/viewCategory/{id}',[FrontendController::class,'viewCategory'])->name("viewCategory");
 Route::get('/viewSubCategory/{id}',[FrontendController::class,'viewSubCategory'])->name("viewSubCategory");
 Route::get('/product-detail/{id}',[CartController::class,'product_detail'])->name("productDetail");
+Route::get('/get-product-price', [CartController::class, 'getProductPrice']);
 Route::get('/cart',[CartController::class, 'cart']);
 Route::get('/cart/{id}',[CartController::class, 'addTocart'])->name("cart");
 

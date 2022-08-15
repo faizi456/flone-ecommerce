@@ -7,7 +7,7 @@
   <meta name="description" content="Morden Bootstrap HTML5 Template">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('FrontendFiles/img/favicon.ico')}}">
-    
+
    <!-- ======= All CSS Plugins here ======== -->
   <link rel="stylesheet" href="{{asset('FrontendFiles/css/plugins/swiper-bundle.min.css')}}">
   <link rel="stylesheet" href="{{asset('FrontendFiles/css/plugins/glightbox.min.css')}}">
@@ -17,7 +17,10 @@
   <link rel="stylesheet" href="{{asset('FrontendFiles/css/vendor/bootstrap.min.css')}}">
 
   <!-- Custom Style CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
   <link rel="stylesheet" href="{{asset('FrontendFiles/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('FrontendFiles/css/style1.css')}}">
+
 
 </head>
 <body>

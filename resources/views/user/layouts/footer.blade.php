@@ -431,6 +431,8 @@
     </div>
 </div>
 <!-- End News letter popup -->
+<script language="JavaScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 <!-- Scroll top bar -->
 <button id="scroll__top"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 244l144-144 144 144M256 120v292"/></svg></button>
@@ -441,8 +443,10 @@
 <script src="{{asset('FrontendFiles/js/plugins/swiper-bundle.min.js')}}"></script>
 <script src="{{asset('FrontendFiles/js/plugins/glightbox.min.js')}}"></script>
 
+
 <!-- Customscript js -->
 <script src="{{asset('FrontendFiles/js/script.js')}}"></script>
+<script src="{{asset('FrontendFiles/js/main.js')}}"></script>
 
 </body>
 

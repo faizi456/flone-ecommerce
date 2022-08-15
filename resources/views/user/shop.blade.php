@@ -1,17 +1,17 @@
 @php
-    function mac(){
-            ob_start();
-            system('ipconfig/all');
-            $mycom=ob_get_contents();
-            ob_clean();
-          
-            $findme="Physical";
-            $pmac=strpos($mycom, $findme);
-            $mac=substr($mycom, ($pmac+36),17);
-            return $mac;
-        }
-        $mac1 = mac();
-        $mac_address = session()->put('mac',$mac1);
+function mac(){
+ob_start();
+system('ipconfig/all');
+$mycom=ob_get_contents();
+ob_clean();
+
+$findme="Physical";
+$pmac=strpos($mycom, $findme);
+$mac=substr($mycom, ($pmac+36),17);
+return $mac;
+}
+$mac1 = mac();
+$mac_address = session()->put('mac',$mac1);
 @endphp
 @extends('user.layouts.main')
 @section('main-section')
@@ -26,8 +26,7 @@
                     <div class="breadcrumb__content text-center">
                         <h1 class="breadcrumb__content--title text-white mb-25">Shop Left Sidebar</h1>
                         <ul class="breadcrumb__content--menu d-flex justify-content-center">
-                            <li class="breadcrumb__content--menu__items"><a class="text-white"
-                                    href="index.html">Home</a></li>
+                            <li class="breadcrumb__content--menu__items"><a class="text-white" href="index.html">Home</a></li>
                             <li class="breadcrumb__content--menu__items"><span class="text-white">Shop Left
                                     Sidebar</span></li>
                         </ul>
@@ -44,14 +43,10 @@
             <div class="shop__header bg__gray--color d-flex align-items-center justify-content-between mb-30">
                 <button class="widget__filter--btn d-flex d-lg-none align-items-center" data-offcanvas>
                     <svg class="widget__filter--btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="28" d="M368 128h80M64 128h240M368 384h80M64 384h240M208 256h240M64 256h80" />
-                        <circle cx="336" cy="128" r="28" fill="none" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="28" />
-                        <circle cx="176" cy="256" r="28" fill="none" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="28" />
-                        <circle cx="336" cy="384" r="28" fill="none" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="28" />
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="28" d="M368 128h80M64 128h240M368 384h80M64 384h240M208 256h240M64 256h80" />
+                        <circle cx="336" cy="128" r="28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="28" />
+                        <circle cx="176" cy="256" r="28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="28" />
+                        <circle cx="336" cy="384" r="28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="28" />
                     </svg>
                     <span class="widget__filter--btn__text">Filter</span>
                 </button>
@@ -81,43 +76,31 @@
                     </div>
                     <div class="product__view--mode__list">
                         <div class="product__grid--column__buttons d-flex justify-content-center">
-                            <button class="product__grid--column__buttons--icons active"
-                                aria-label="product grid button" data-toggle="tab" data-target="#product_grid">
+                            <button class="product__grid--column__buttons--icons active" aria-label="product grid button" data-toggle="tab" data-target="#product_grid">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 9 9">
                                     <g transform="translate(-1360 -479)">
-                                        <rect id="Rectangle_5725" data-name="Rectangle 5725" width="4" height="4"
-                                            transform="translate(1360 479)" fill="currentColor" />
-                                        <rect id="Rectangle_5727" data-name="Rectangle 5727" width="4" height="4"
-                                            transform="translate(1360 484)" fill="currentColor" />
-                                        <rect id="Rectangle_5726" data-name="Rectangle 5726" width="4" height="4"
-                                            transform="translate(1365 479)" fill="currentColor" />
-                                        <rect id="Rectangle_5728" data-name="Rectangle 5728" width="4" height="4"
-                                            transform="translate(1365 484)" fill="currentColor" />
+                                        <rect id="Rectangle_5725" data-name="Rectangle 5725" width="4" height="4" transform="translate(1360 479)" fill="currentColor" />
+                                        <rect id="Rectangle_5727" data-name="Rectangle 5727" width="4" height="4" transform="translate(1360 484)" fill="currentColor" />
+                                        <rect id="Rectangle_5726" data-name="Rectangle 5726" width="4" height="4" transform="translate(1365 479)" fill="currentColor" />
+                                        <rect id="Rectangle_5728" data-name="Rectangle 5728" width="4" height="4" transform="translate(1365 484)" fill="currentColor" />
                                     </g>
                                 </svg>
                             </button>
-                            <button class="product__grid--column__buttons--icons" aria-label="product list button"
-                                data-toggle="tab" data-target="#product_list">
+                            <button class="product__grid--column__buttons--icons" aria-label="product list button" data-toggle="tab" data-target="#product_list">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 13 8">
                                     <g id="Group_14700" data-name="Group 14700" transform="translate(-1376 -478)">
                                         <g transform="translate(12 -2)">
                                             <g id="Group_1326" data-name="Group 1326">
-                                                <rect id="Rectangle_5729" data-name="Rectangle 5729" width="3"
-                                                    height="2" transform="translate(1364 483)" fill="currentColor" />
-                                                <rect id="Rectangle_5730" data-name="Rectangle 5730" width="9"
-                                                    height="2" transform="translate(1368 483)" fill="currentColor" />
+                                                <rect id="Rectangle_5729" data-name="Rectangle 5729" width="3" height="2" transform="translate(1364 483)" fill="currentColor" />
+                                                <rect id="Rectangle_5730" data-name="Rectangle 5730" width="9" height="2" transform="translate(1368 483)" fill="currentColor" />
                                             </g>
                                             <g id="Group_1328" data-name="Group 1328" transform="translate(0 -3)">
-                                                <rect id="Rectangle_5729-2" data-name="Rectangle 5729" width="3"
-                                                    height="2" transform="translate(1364 483)" fill="currentColor" />
-                                                <rect id="Rectangle_5730-2" data-name="Rectangle 5730" width="9"
-                                                    height="2" transform="translate(1368 483)" fill="currentColor" />
+                                                <rect id="Rectangle_5729-2" data-name="Rectangle 5729" width="3" height="2" transform="translate(1364 483)" fill="currentColor" />
+                                                <rect id="Rectangle_5730-2" data-name="Rectangle 5730" width="9" height="2" transform="translate(1368 483)" fill="currentColor" />
                                             </g>
                                             <g id="Group_1327" data-name="Group 1327" transform="translate(0 -1)">
-                                                <rect id="Rectangle_5731" data-name="Rectangle 5731" width="3"
-                                                    height="2" transform="translate(1364 487)" fill="currentColor" />
-                                                <rect id="Rectangle_5732" data-name="Rectangle 5732" width="9"
-                                                    height="2" transform="translate(1368 487)" fill="currentColor" />
+                                                <rect id="Rectangle_5731" data-name="Rectangle 5731" width="3" height="2" transform="translate(1364 487)" fill="currentColor" />
+                                                <rect id="Rectangle_5732" data-name="Rectangle 5732" width="9" height="2" transform="translate(1368 487)" fill="currentColor" />
                                             </g>
                                         </g>
                                     </g>
@@ -128,16 +111,12 @@
                     <div class="product__view--mode__list product__view--search d-none d-lg-block">
                         <form class="product__view--search__form" action="#">
                             <label>
-                                <input class="product__view--search__input border-0" placeholder="Search by"
-                                    type="text">
+                                <input class="product__view--search__input border-0" placeholder="Search by" type="text">
                             </label>
                             <button class="product__view--search__btn" aria-label="shop button" type="submit">
-                                <svg class="product__view--search__btn--svg" xmlns="http://www.w3.org/2000/svg"
-                                    width="22.51" height="20.443" viewBox="0 0 512 512">
-                                    <path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
-                                        fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448" />
+                                <svg class="product__view--search__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 512 512">
+                                    <path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448" />
                                 </svg>
                             </button>
                         </form>
@@ -170,8 +149,7 @@
                                 @foreach($categories as $category)
                                 <li class="widget__categories--menu__list">
                                     <a href="{{route('viewCategory',$category->id)}}">
-                                        <label
-                                            class="widget__categories--menu__label d-flex align-items-center mt-2 mb-2">
+                                        <label class="widget__categories--menu__label d-flex align-items-center mt-2 mb-2">
                                             <span>{{$category->name}}</span>
                                         </label>
                                     </a>
@@ -200,111 +178,27 @@
                                 <div class="product__section--inner product__grid--inner">
                                     <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-3 row-cols-2 mb--n30">
                                         @foreach($products as $product)
-                                            @if($product->product_type == "Single Product" && $product->status == "1")
-                                                @php
-                                                $product_images = explode(',',$product->images);
-                                                @endphp
-                                                <div class="col mb-30">
-                                                    <div class="product__items ">
-                                                        <div class="product__items--thumbnail">
-                                                            <a class="product__items--link" href="product-details.html">
-                                                                <img class="product__items--img product__primary--img" src="{{asset($product_images[0])}}" alt="product-img" style="height: 250px !important;">
-                                                                <img class="product__items--img product__secondary--img" src="{{asset($product_images[1])}}" alt="product-img" style="height: 250px !important;">
-                                                            </a>
-
-                                                        </div>
-                                                        <div class="product__items--content">
-                                                            <span class="product__items--content__subtitle">Code:
-                                                                {{$product->product_code}}</span>
-                                                            <h3 class="product__items--content__title h4"><a
-                                                                    href="{{route('productDetail',$product->product_id)}}">{{$product->product_name}}</a>
-                                                            </h3>
-                                                            <div class="product__items--price">
-                                                                <span class="current__price">RS. {{$product->unitPrice}}</span>
-                                                            </div>
-                                                            <ul class="product__items--action d-flex">
-                                                                <li class="product__items--action__list">
-                                                                    <a class="product__items--action__btn add__to--cart"
-                                                                        href="{{route('cart',$product->product_id)}}">
-                                                                        <svg class="product__items--action__btn--svg"
-                                                                            xmlns="http://www.w3.org/2000/svg" width="22.51"
-                                                                            height="20.443" viewBox="0 0 14.706 13.534">
-                                                                            <g transform="translate(0 0)">
-                                                                                <g>
-                                                                                    <path data-name="Path 16787"
-                                                                                        d="M4.738,472.271h7.814a.434.434,0,0,0,.414-.328l1.723-6.316a.466.466,0,0,0-.071-.4.424.424,0,0,0-.344-.179H3.745L3.437,463.6a.435.435,0,0,0-.421-.353H.431a.451.451,0,0,0,0,.9h2.24c.054.257,1.474,6.946,1.555,7.33a1.36,1.36,0,0,0-.779,1.242,1.326,1.326,0,0,0,1.293,1.354h7.812a.452.452,0,0,0,0-.9H4.74a.451.451,0,0,1,0-.9Zm8.966-6.317-1.477,5.414H5.085l-1.149-5.414Z"
-                                                                                        transform="translate(0 -463.248)"
-                                                                                        fill="currentColor"></path>
-                                                                                    <path data-name="Path 16788"
-                                                                                        d="M5.5,478.8a1.294,1.294,0,1,0,1.293-1.353A1.325,1.325,0,0,0,5.5,478.8Zm1.293-.451a.452.452,0,1,1-.431.451A.442.442,0,0,1,6.793,478.352Z"
-                                                                                        transform="translate(-1.191 -466.622)"
-                                                                                        fill="currentColor"></path>
-                                                                                    <path data-name="Path 16789"
-                                                                                        d="M13.273,478.8a1.294,1.294,0,1,0,1.293-1.353A1.325,1.325,0,0,0,13.273,478.8Zm1.293-.451a.452.452,0,1,1-.431.451A.442.442,0,0,1,14.566,478.352Z"
-                                                                                        transform="translate(-2.875 -466.622)"
-                                                                                        fill="currentColor"></path>
-                                                                                </g>
-                                                                            </g>
-                                                                        </svg>
-                                                                        <span class="add__to--cart__text"> + Add to cart</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="product__items--action__list">
-                                                                    <a class="product__items--action__btn" href="wishlist.html">
-                                                                        <svg class="product__items--action__btn--svg"
-                                                                            xmlns="http://www.w3.org/2000/svg" width="25.51"
-                                                                            height="23.443" viewBox="0 0 512 512">
-                                                                            <path
-                                                                                d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
-                                                                                fill="none" stroke="currentColor"
-                                                                                stroke-linecap="round" stroke-linejoin="round"
-                                                                                stroke-width="32"></path>
-                                                                        </svg>
-                                                                        <span class="visually-hidden">Wishlist</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="product__items--action__list">
-                                                                    <a class="product__items--action__btn" data-open="modal1"
-                                                                        href="javascript:void(0)">
-                                                                        <svg class="product__items--action__btn--svg"
-                                                                            xmlns="http://www.w3.org/2000/svg" width="25.51"
-                                                                            height="23.443" viewBox="0 0 512 512">
-                                                                            <path
-                                                                                d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z"
-                                                                                fill="none" stroke="currentColor"
-                                                                                stroke-linecap="round" stroke-linejoin="round"
-                                                                                stroke-width="32" />
-                                                                            <circle cx="256" cy="256" r="80" fill="none"
-                                                                                stroke="currentColor" stroke-miterlimit="10"
-                                                                                stroke-width="32" />
-                                                                        </svg>
-                                                                        <span class="visually-hidden">Quick View</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
+                                        @if($product->status == "1")
+                                        @php
+                                            $product_images = explode(',',$product->images);
+                                        @endphp
+                                            <div class="col mb-30">
+                                                <div class="product__items ">
+                                                    <div class="product__items--thumbnail">
+                                                        <a class="product__items--link" href="product-details.html">
+                                                            <img class="product__items--img product__primary--img" src="{{asset($product_images[0])}}" alt="product-img" style="height: 250px !important;">
+                                                            <img class="product__items--img product__secondary--img" src="{{asset($product_images[1])}}" alt="product-img" style="height: 250px !important;">
+                                                        </a>
                                                     </div>
-                                                </div>
-                                            @else
-                                                @php
-                                                $product_images = explode(',',$product->images);
-                                                @endphp
-                                                <div class="col mb-30">
-                                                    <div class="product__items ">
-                                                        <div class="product__items--thumbnail">
-                                                            <a class="product__items--link" href="product-details.html">
-                                                                <img class="product__items--img product__primary--img" src="{{asset($product_images[0])}}" alt="product-img" style="height: 250px !important;">
-                                                                <img class="product__items--img product__secondary--img" src="{{asset($product_images[1])}}" alt="product-img" style="height: 250px !important;">
-                                                            </a>
-
-                                                        </div>
-                                                        <div class="product__items--content">
-                                                            <span class="product__items--content__subtitle">Code:
-                                                                {{$product->product_code}}</span>
-                                                            <h3 class="product__items--content__title h4"><a
-                                                                    href="product-details.html">{{$product->product_name}}</a>
-                                                            </h3>
-                                                            <div class="product__items--price">
+                                                    <div class="product__items--content">
+                                                        <span class="product__items--content__subtitle">Code:
+                                                            {{$product->product_code}}</span>
+                                                        <h3 class="product__items--content__title h4"><a href="{{route('productDetail',$product->product_id)}}">{{$product->product_name}}</a>
+                                                        </h3>
+                                                        <div class="product__items--price">
+                                                            @if($product->product_type == "Single Product")
+                                                                <span class="current__price">RS. {{$product->unitPrice}}</span>
+                                                            @else
                                                                 @php
                                                                     $v_unitPrice = unserialize($product->unitPrice);
                                                                     $newUnitPrice = array();
@@ -317,71 +211,52 @@
                                                                     @endphp
                                                                 @endforeach
                                                                 <span class="current__price">RS. {{$newUnitPrice[0]}} </span>
-                                                            </div>
-                                                            <ul class="product__items--action d-flex">
-                                                                <li class="product__items--action__list">
-                                                                    <a class="product__items--action__btn add__to--cart"
-                                                                        href="{{route('cart',$product->product_id)}}">
-                                                                        <svg class="product__items--action__btn--svg"
-                                                                            xmlns="http://www.w3.org/2000/svg" width="22.51"
-                                                                            height="20.443" viewBox="0 0 14.706 13.534">
-                                                                            <g transform="translate(0 0)">
-                                                                                <g>
-                                                                                    <path data-name="Path 16787"
-                                                                                        d="M4.738,472.271h7.814a.434.434,0,0,0,.414-.328l1.723-6.316a.466.466,0,0,0-.071-.4.424.424,0,0,0-.344-.179H3.745L3.437,463.6a.435.435,0,0,0-.421-.353H.431a.451.451,0,0,0,0,.9h2.24c.054.257,1.474,6.946,1.555,7.33a1.36,1.36,0,0,0-.779,1.242,1.326,1.326,0,0,0,1.293,1.354h7.812a.452.452,0,0,0,0-.9H4.74a.451.451,0,0,1,0-.9Zm8.966-6.317-1.477,5.414H5.085l-1.149-5.414Z"
-                                                                                        transform="translate(0 -463.248)"
-                                                                                        fill="currentColor"></path>
-                                                                                    <path data-name="Path 16788"
-                                                                                        d="M5.5,478.8a1.294,1.294,0,1,0,1.293-1.353A1.325,1.325,0,0,0,5.5,478.8Zm1.293-.451a.452.452,0,1,1-.431.451A.442.442,0,0,1,6.793,478.352Z"
-                                                                                        transform="translate(-1.191 -466.622)"
-                                                                                        fill="currentColor"></path>
-                                                                                    <path data-name="Path 16789"
-                                                                                        d="M13.273,478.8a1.294,1.294,0,1,0,1.293-1.353A1.325,1.325,0,0,0,13.273,478.8Zm1.293-.451a.452.452,0,1,1-.431.451A.442.442,0,0,1,14.566,478.352Z"
-                                                                                        transform="translate(-2.875 -466.622)"
-                                                                                        fill="currentColor"></path>
-                                                                                </g>
-                                                                            </g>
-                                                                        </svg>
-                                                                        <span class="add__to--cart__text"> + Add to cart</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="product__items--action__list">
-                                                                    <a class="product__items--action__btn" href="wishlist.html">
-                                                                        <svg class="product__items--action__btn--svg"
-                                                                            xmlns="http://www.w3.org/2000/svg" width="25.51"
-                                                                            height="23.443" viewBox="0 0 512 512">
-                                                                            <path
-                                                                                d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
-                                                                                fill="none" stroke="currentColor"
-                                                                                stroke-linecap="round" stroke-linejoin="round"
-                                                                                stroke-width="32"></path>
-                                                                        </svg>
-                                                                        <span class="visually-hidden">Wishlist</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="product__items--action__list">
-                                                                    <a class="product__items--action__btn" data-open="modal1"
-                                                                        href="javascript:void(0)">
-                                                                        <svg class="product__items--action__btn--svg"
-                                                                            xmlns="http://www.w3.org/2000/svg" width="25.51"
-                                                                            height="23.443" viewBox="0 0 512 512">
-                                                                            <path
-                                                                                d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z"
-                                                                                fill="none" stroke="currentColor"
-                                                                                stroke-linecap="round" stroke-linejoin="round"
-                                                                                stroke-width="32" />
-                                                                            <circle cx="256" cy="256" r="80" fill="none"
-                                                                                stroke="currentColor" stroke-miterlimit="10"
-                                                                                stroke-width="32" />
-                                                                        </svg>
-                                                                        <span class="visually-hidden">Quick View</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
+                                                            @endif
                                                         </div>
+                                                        <ul class="product__items--action d-flex">
+                                                            <li class="product__items--action__list">
+                                                                @if($product->product_type == "Single Product")
+                                                                <a class="product__items--action__btn add__to--cart addCart" href="{{route('cart',$product->product_id)}}">
+                                                                    <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 14.706 13.534">
+                                                                        <g transform="translate(0 0)">
+                                                                            <g>
+                                                                                <path data-name="Path 16787" d="M4.738,472.271h7.814a.434.434,0,0,0,.414-.328l1.723-6.316a.466.466,0,0,0-.071-.4.424.424,0,0,0-.344-.179H3.745L3.437,463.6a.435.435,0,0,0-.421-.353H.431a.451.451,0,0,0,0,.9h2.24c.054.257,1.474,6.946,1.555,7.33a1.36,1.36,0,0,0-.779,1.242,1.326,1.326,0,0,0,1.293,1.354h7.812a.452.452,0,0,0,0-.9H4.74a.451.451,0,0,1,0-.9Zm8.966-6.317-1.477,5.414H5.085l-1.149-5.414Z" transform="translate(0 -463.248)" fill="currentColor"></path>
+                                                                                <path data-name="Path 16788" d="M5.5,478.8a1.294,1.294,0,1,0,1.293-1.353A1.325,1.325,0,0,0,5.5,478.8Zm1.293-.451a.452.452,0,1,1-.431.451A.442.442,0,0,1,6.793,478.352Z" transform="translate(-1.191 -466.622)" fill="currentColor"></path>
+                                                                                <path data-name="Path 16789" d="M13.273,478.8a1.294,1.294,0,1,0,1.293-1.353A1.325,1.325,0,0,0,13.273,478.8Zm1.293-.451a.452.452,0,1,1-.431.451A.442.442,0,0,1,14.566,478.352Z" transform="translate(-2.875 -466.622)" fill="currentColor"></path>
+                                                                            </g>
+                                                                        </g>
+                                                                    </svg>
+                                                                </a>
+                                                                @else
+                                                                <a class="product__items--action__btn add__to--cart" href="{{route('productDetail',$product->product_id)}}">
+                                                                    <button class="btn">
+                                                                        <i class="fa-solid fa-magnifying-glass" style="font-size: 16px; color:grey;"></i>
+                                                                    </button>
+                                                                </a>
+                                                                @endif
+                                                            </li>
+                                                            <li class="product__items--action__list">
+                                                                <a class="product__items--action__btn" href="wishlist.html">
+                                                                    <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="25.51" height="23.443" viewBox="0 0 512 512">
+                                                                        <path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+                                                                    </svg>
+                                                                    <span class="visually-hidden">Wishlist</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="product__items--action__list">
+                                                                <a class="product__items--action__btn" data-open="modal1" href="javascript:void(0)">
+                                                                    <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="25.51" height="23.443" viewBox="0 0 512 512">
+                                                                        <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+                                                                        <circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
+                                                                    </svg>
+                                                                    <span class="visually-hidden">Quick View</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
                                                     </div>
                                                 </div>
-                                            @endif
+                                            </div>
+                                        @endif
                                         @endforeach
                                     </div>
                                 </div>
@@ -392,17 +267,13 @@
                                 <ul class="pagination__wrapper d-flex align-items-center justify-content-center">
                                     <li class="pagination__list">
                                         <a href="shop.html" class="pagination__item--arrow  link ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443"
-                                                viewBox="0 0 512 512">
-                                                <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="48"
-                                                    d="M244 400L100 256l144-144M120 256h292" />
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 512 512">
+                                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292" />
                                             </svg>
                                             <span class="visually-hidden">pagination arrow</span>
                                         </a>
                                     <li>
-                                    <li class="pagination__list"><span
-                                            class="pagination__item pagination__item--current">1</span></li>
+                                    <li class="pagination__list"><span class="pagination__item pagination__item--current">1</span></li>
                                     <li class="pagination__list"><a href="shop.html" class="pagination__item link">2</a>
                                     </li>
                                     <li class="pagination__list"><a href="shop.html" class="pagination__item link">3</a>
@@ -411,11 +282,8 @@
                                     </li>
                                     <li class="pagination__list">
                                         <a href="shop.html" class="pagination__item--arrow  link ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443"
-                                                viewBox="0 0 512 512">
-                                                <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="48"
-                                                    d="M268 112l144 144-144 144M392 256H100" />
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 512 512">
+                                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100" />
                                             </svg>
                                             <span class="visually-hidden">pagination arrow</span>
                                         </a>
@@ -431,5 +299,8 @@
     <!-- End shop section -->
 
 </main>
-
+ 
 @endsection
+<script src="text/javascript">
+    
+</script>

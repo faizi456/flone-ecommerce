@@ -16,10 +16,38 @@ class CartController extends Controller
         return view("user.product_detail",['product'=>$product]);
     }
 
+    public function getProductPrice(Request $request){
+        $data = $request->all();
+        $array = explode('-',$data['sizeAndId']);
+        // echo $array[0];  having id
+        // echo $array[1];  having size
+
+        $product = Product::where('product_id',$array[0])->first();
+        $unitPrice = unserialize($product->unitPrice);
+        $colors = unserialize($product->color);
+        // price available
+        foreach($unitPrice as $key=>$value){
+            if($key == $array[1]){
+                $price = $value;
+            }
+        }
+        // colors available
+        foreach($colors as $key=>$value){
+            if($key == $array[1]){
+                $color = $value;
+            }
+        }
+        return response()->json([
+            'id'=>$array[0],
+            'price'=>$price,
+            'color'=>$color,
+        ]);
+    }
+
     public function cart(){
         $mac = session('mac');
         $cart_products = Cart::where('mac',$mac)->pluck('product_id');
-        $products = Product::whereIn('product_id',$cart_products)->get();
+        $products = Product::whereIn('product_id',$cart_products)->with(['cat:name,id','subcat:subcat_name,id'])->get();
         return view("user.cart",['cart_products'=>$products]);
     }
     
