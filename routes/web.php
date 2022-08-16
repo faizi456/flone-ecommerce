@@ -34,7 +34,9 @@ Route::get('/viewSubCategory/{id}',[FrontendController::class,'viewSubCategory']
 Route::get('/product-detail/{id}',[CartController::class,'product_detail'])->name("productDetail");
 Route::get('/get-product-price', [CartController::class, 'getProductPrice']);
 Route::get('/cart',[CartController::class, 'cart']);
-Route::get('/cart/{id}',[CartController::class, 'addTocart'])->name("cart");
+// Route::get('/cart/{id}',[CartController::class, 'addTocart'])->name("cart");
+Route::post('/cart',[CartController::class, 'addProductTocart'])->name("cart");
+
 
 
 

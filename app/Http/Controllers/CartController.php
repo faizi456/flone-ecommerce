@@ -41,6 +41,7 @@ class CartController extends Controller
             'id'=>$array[0],
             'price'=>$price,
             'color'=>$color,
+            'size'=>$array[1],
         ]);
     }
 
@@ -51,44 +52,58 @@ class CartController extends Controller
         return view("user.cart",['cart_products'=>$products]);
     }
     
-    public function addTocart(Request $req, $id){
+    public function addProductTocart(Request $req){
         $mac = session('mac');
-        dd($mac);
-        // $product = Product::find($id);
-        // if($product){
-        //     $cart = Cart::where('product_id',$id)->get();
-        //     if(count($cart) > 0){
-        //         Session::flash('error_message', 'Product already exist. Kindly <a href="/cart" style="font-weight:bolder; font-size:16px;">visit Cart</a>!');
-        //         return back();
-        //     }
-        //     else{
-        //         if($product->product_type == "Single Product"){
-        //             $cart = new Cart;
-        //             $cart->product_id = $id;
-        //             $cart->product_type = $product->product_type;
-        //             $cart->product_name = $product->product_name;
-        //             $cart->product_code = $product->product_code;
-        //             $cart->unitPrice = $product->unitPrice;
-        //             $cart->srp = $product->srp;
-        //             $cart->mac = $mac_address;
-        //             if($cart->save()){
-        //                 Session::flash('success_message', 'Product is added successfully! <a href="/cart" style="font-weight:bolder; font-size:16px;">View Cart</a>');
-        //                 return back();
-        //             }
-        //             else{
-        //                 Session::flash('error_message', 'Some error occured. Please try again!');
-        //                 return back();
-        //             }
-        //         }
-        //         else{
-        //            dd($product->product_type); 
-        //         }
-        //     }
-        // }
-        // else{
-        //     Session::flash('error_message', 'Some error occured. Please try again!');
-        //     return back();
-        // }
+        $product = Product::find($req->product_id);
+        if($product){
+            $cart = Cart::where('product_id',$req->product_id)->get();
+            if(count($cart) > 0){
+                echo "Product already exist";
+                die;
+            }
+            else{
+                if($product->product_type == "Single Product"){
+                    $cart = new Cart;
+                    $cart->product_id = $req->product_id;
+                    $cart->product_type = $product->product_type;
+                    $cart->product_name = $product->product_name;
+                    $cart->product_code = $product->product_code;
+                    $cart->unitPrice = $product->unitPrice;
+                    $cart->quantity = $req->quantity;
+                    $cart->mac = $mac;
+                    if($cart->save()){
+                        return response()->json(['success' => 'Product is added successfully!']);
+                    }
+                    else{
+                        echo "Product is not added";
+                        die;
+                    }
+                }
+                else{
+                    $cart = new Cart;
+                    $cart->product_id = $req->product_id;
+                    $cart->product_type = $product->product_type;
+                    $cart->product_name = $product->product_name;
+                    $cart->product_code = $product->product_code;
+                    $cart->unitPrice = $req->product_price;
+                    $cart->size = $req->product_size;
+                    $cart->color = $req->product_color;
+                    $cart->quantity = $req->quantity;
+                    $cart->mac = $mac;
+                    if($cart->save()){
+                        return response()->json(['success' => 'Product is added successfully!']);
+                    }
+                    else{
+                        echo "Product is not added";
+                        die;
+                    }   
+                }
+            }
+        }
+        else{
+            echo "Some error occured.";
+            die;
+        }
     }
 
 }

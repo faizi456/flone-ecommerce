@@ -63,6 +63,9 @@
                     </div>
                 </div>   
                 <div class="col">
+                    <div id="alert-div">
+
+                    </div>
                     <div class="product__details--info">
                             <h2 class="product__details--info__title mb-15">{{$product->product_name}}</h2>
                             <div class="product__details--info__price mb-10">
@@ -104,24 +107,38 @@
                                     </fieldset>
                                 </div>
                                 @endif
-                                <div >
+                                @if($product->product_type=="Variation Product")
+                                <form method="POST" id="variationProduct">
+                                    @csrf
+                                <div>
                                     <div class="quantity buttons_added">
                                         <input type="button" value="-" class="minus" style="background-color: #ee2761; border:none; color:white; font-size:16px; width:20px;">
                                         <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="" style="width:50px; text-align:center; border:#ee2761 1px solid; color:#ee2761;">
                                         <input type="button" value="+" class="plus" style="background-color: #ee2761; border:none; color:white; font-size:16px; width:20px;">
                                     </div>
                                 </div>
-                                @if($product->product_type=="Variation Product")
-                                    <form action="">
                                         <div class="product__variant--list mb-15 mt-4">
                                             <input type="hidden" name="product_id" value="{{$product->product_id}}">
-                                                <input type="hidden" name="product_price" value="">
-                                            <button class="variant__buy--now__btn primary__btn" type="submit">Add to Cart</button>
+                                            <input type="text" hidden name="product_price" id="product_price" value="" required>
+                                            <input type="text" hidden name="product_size" id="product_size" value="" required>
+                                            <input type="text" hidden name="product_color" id="product_color" value="" required>
+                                            <button class="variant__buy--now__btn primary__btn" type="submit" id="cart-btn">Add to Cart</button>
                                         </div>
                                     </form>
                                 @else
-                                <form action="">
-                                    <button class="variant__buy--now__btn primary__btn" type="submit">Add to Cart</button>
+                                <form method="POST" id="singleProduct">
+                                    @csrf
+                                    <div>
+                                        <div class="quantity buttons_added">
+                                            <input type="button" value="-" class="minus" style="background-color: #ee2761; border:none; color:white; font-size:16px; width:20px;">
+                                            <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="" style="width:50px; text-align:center; border:#ee2761 1px solid; color:#ee2761;">
+                                            <input type="button" value="+" class="plus" style="background-color: #ee2761; border:none; color:white; font-size:16px; width:20px;">
+                                        </div>
+                                    </div>
+                                    <div class="product__variant--list mb-15 mt-4">
+                                        <input type="hidden" name="product_id" value="{{$product->product_id}}">
+                                        <button class="variant__buy--now__btn primary__btn" type="submit" id="cart-btn-single">Add to Cart</button>
+                                    </div>
                                 </form>
                                 @endif
                                 <div class="product__details--info__meta">
@@ -141,24 +158,85 @@
 
 @endsection
 <script language="JavaScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
 <script>
     $(document).ready(function(){
         $("#select_size").change(function(){
             var sizeAndId = $(this).val();
+            $("#cart-btn").prop("disabled", true);
             $.ajax({
                 type:'get',
                 url:'/get-product-price',
                 data:{sizeAndId:sizeAndId},
                 success:function(response){
                     $("#price").html("RS. "+response.price);
+                    $('#product_price').val(response.price);
                     $('#selectColor').val(response.id+'-'+response.color);
+                    $('#product_color').val(response.color);
+                    $('#product_size').val(response.size);
+                    $("#cart-btn").prop("disabled", false);
                 },
                 error:function(error){
                     alert("Please select any size");
                 }
             });
         });
+
+//Single product add to cart
+        $("#singleProduct").submit(function(event){
+            event.preventDefault();
+            var form = $("#singleProduct")[0];
+            var formData = new FormData(form);
+            $("#cart-btn-single").prop("disabled", true);
+            $.ajax({
+                type:"POST",
+                url:'/cart',
+                data:formData,
+                processData:false,
+                contentType:false,
+                success:function(response){
+                    if(response.success){
+                        $("#alert-div").html('<div class="alert alert-success" role="alert"><b>'+response.success+'</b><button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                        $("#cart-btn").prop("disabled", false);
+                    }
+                    else{
+                        $("#alert-div").html('<div class="alert alert-danger" role="alert"><b>'+response+'</b><button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                        $("#cart-btn").prop("disabled", false);
+                    }   
+                },
+                error:function(error){
+                    alert("Please select any variation");
+                }
+            });
+        });
+
+        // Variation Product Add to Cart
+        $("#variationProduct").submit(function(event){
+            event.preventDefault();
+            var form = $("#variationProduct")[0];
+            var formData = new FormData(form);
+            $("#cart-btn").prop("disabled", true);
+            $.ajax({
+                type:"POST",
+                url:'/cart',
+                data:formData,
+                processData:false,
+                contentType:false,
+                success:function(response){
+                    if(response.success){
+                        $("#alert-div").html('<div class="alert alert-success" role="alert"><b>'+response.success+'</b><button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                        $("#cart-btn").prop("disabled", false);
+                    }
+                    else{
+                        $("#alert-div").html('<div class="alert alert-danger" role="alert"><b>'+response+'</b><button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                        $("#cart-btn").prop("disabled", false);
+                    }                
+                },
+                error:function(error){
+                    alert("Please select any variation");
+                }
+            });
+        });
+
+
     });
 </script>
