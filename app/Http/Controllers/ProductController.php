@@ -50,6 +50,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        dd("ddsds");
         $product = new Product;
         if($request->input("product_type") == "Single Product"){
             $product->product_type = $request->input("product_type");

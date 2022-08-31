@@ -6,15 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Subcategory;
 use App\Models\Product;
-
+use Auth;
 
 
 class FrontendController extends Controller
 {
     // Index page
     public function index(){
-        $categories = Category::all();
-        return view("user.index",['categories'=>$categories]);
+        $latest_products = Product::orderBy('product_id', 'desc')->take(4)->get();
+        $sale_products = Product::orderBy('product_id', 'asc')->take(4)->get();
+        return view("user.index",['latest_products'=>$latest_products, 'sale_products'=>$sale_products]);
     }
     // Shop Page
     public function shop(){
@@ -45,5 +46,8 @@ class FrontendController extends Controller
         return view("user.view_subcategory",['categories'=>$categories, 'subcategory'=>$subcategory, 'products'=>$products]);
     }
 
-    
+    public function viewLoginRegister(){
+        return view("user.login_register");
+    }
+
 }

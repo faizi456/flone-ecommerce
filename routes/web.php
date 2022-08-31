@@ -11,6 +11,8 @@ use App\Http\Controllers\AdminRegisterController;
 use App\Http\Controllers\AttributeController;
 use App\Http\Controllers\AttributeValueController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\UserRegisterController;
 
 
 /*
@@ -25,7 +27,7 @@ use App\Http\Controllers\CartController;
 */
 
 // user side
-Route::get('/',[FrontendController::class,'index']);
+Route::get('/',[FrontendController::class,'index'])->name("index");
 Route::get('/shop',[FrontendController::class,'shop'])->name('shop');
 Route::get('/aboutUs',[FrontendController::class,'aboutUs']);
 Route::get('/contactUs',[FrontendController::class,'contactUs']);
@@ -33,10 +35,17 @@ Route::get('/viewCategory/{id}',[FrontendController::class,'viewCategory'])->nam
 Route::get('/viewSubCategory/{id}',[FrontendController::class,'viewSubCategory'])->name("viewSubCategory");
 Route::get('/product-detail/{id}',[CartController::class,'product_detail'])->name("productDetail");
 Route::get('/get-product-price', [CartController::class, 'getProductPrice']);
-Route::get('/cart',[CartController::class, 'cart']);
-// Route::get('/cart/{id}',[CartController::class, 'addTocart'])->name("cart");
+Route::get('/cart',[CartController::class, 'cart'])->name("view.cart");
 Route::post('/cart',[CartController::class, 'addProductTocart'])->name("cart");
-
+Route::post('/update-cart',[CartController::class, 'updateCart'])->name("updateCart");
+Route::get('/delete-single-item',[CartController::class,'delete_single_item']);
+Route::get('/empty-cart',[CartController::class,'empty_cart']);
+Route::get('/login-register',[UserRegisterController::class,'viewLoginRegister']);
+Route::post('/registration',[UserRegisterController::class,'userRegister'])->name('registration');
+Route::post('/UserLogin',[UserRegisterController::class,'UserLogin'])->name('UserLogin');
+Route::get('/user-logout',[UserRegisterController::class,'userLogout'])->name('user.logout');
+Route::get('/checkout',[CheckoutController::class,'viewCheckoutPage']);
+Route::post('/user-checkout',[CheckoutController::class,'userCheckout'])->name('userCheckout');
 
 
 
